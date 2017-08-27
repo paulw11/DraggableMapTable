@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13178.6" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13156.2"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="DraggableMapTable" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" mapType="mutedStandard" showsBuildings="NO" showsPointsOfInterest="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1PA-sq-mzv">
+                                <rect key="frame" x="0.0" y="20" width="375" height="568"/>
+                            </mapView>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tabtop.png" translatesAutoresizingMaskIntoConstraints="NO" id="G9X-Rx-Mdo">
+                                <rect key="frame" x="0.0" y="390" width="375" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Wie-Z1-Uiw"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="3jt-aa-9VE" appends="YES" id="Mlx-no-Ary"/>
+                                    <outletCollection property="gestureRecognizers" destination="vtN-z2-pBF" appends="YES" id="q4a-Nx-1fH"/>
+                                </connections>
+                            </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="wG3-b4-SiX">
+                                <rect key="frame" x="0.0" y="420" width="375" height="247"/>
+                                <color key="backgroundColor" red="0.027450980392156862" green="0.77254901960784317" blue="0.67450980392156867" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="Tbe-3i-Wbw" style="IBUITableViewCellStyleDefault" id="AMo-3Q-A3y">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="AMo-3Q-A3y" id="bQB-IX-lIw">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Tbe-3i-Wbw">
+                                                    <rect key="frame" x="15" y="0.0" width="345" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" red="0.027450980392156862" green="0.77254901960784317" blue="0.67450980392156867" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="I1S-z0-6Go"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="mrF-2R-Sd7"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="1PA-sq-mzv" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="9NQ-0B-DU7"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="G9X-Rx-Mdo" secondAttribute="trailing" id="Bcl-WL-lv9"/>
+                            <constraint firstItem="wG3-b4-SiX" firstAttribute="top" secondItem="G9X-Rx-Mdo" secondAttribute="bottom" id="GZn-9N-dxJ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="wG3-b4-SiX" secondAttribute="trailing" id="HbO-zx-JEL"/>
+                            <constraint firstItem="G9X-Rx-Mdo" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Heg-hS-D0w"/>
+                            <constraint firstItem="G9X-Rx-Mdo" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="400" id="Jg3-dY-cww"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="1PA-sq-mzv" secondAttribute="bottom" id="R3f-iT-e88"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="wG3-b4-SiX" secondAttribute="bottom" id="RhU-F5-fix"/>
+                            <constraint firstItem="1PA-sq-mzv" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Wk2-YF-R4s"/>
+                            <constraint firstItem="wG3-b4-SiX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ZcA-Tn-SuF"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="1PA-sq-mzv" secondAttribute="trailing" id="hT0-jg-j4b"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="dividerCenter" destination="Jg3-dY-cww" id="E86-Tm-893"/>
+                        <outlet property="mapView" destination="1PA-sq-mzv" id="FSe-hQ-Pv8"/>
+                        <outlet property="tableView" destination="wG3-b4-SiX" id="Mz7-fV-wXL"/>
+                        <outlet property="tabtop" destination="G9X-Rx-Mdo" id="fzm-aH-ric"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="3jt-aa-9VE">
+                    <connections>
+                        <action selector="dividerDraggerWithRecognizer:" destination="BYZ-38-t0r" id="G5J-oc-PhD"/>
+                    </connections>
+                </panGestureRecognizer>
+                <screenEdgePanGestureRecognizer minimumNumberOfTouches="1" id="vtN-z2-pBF">
+                    <rectEdge key="edges" top="YES" bottom="YES"/>
+                    <connections>
+                        <action selector="dividerDraggerWithRecognizer:" destination="BYZ-38-t0r" id="Qeo-VR-ldc"/>
+                    </connections>
+                </screenEdgePanGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="170.46476761619192"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="tabtop.png" width="800" height="30"/>
+    </resources>
+</document>
